@@ -53,24 +53,10 @@ jQuery(document).ready(function(){
 						['para', ['ul', 'ol', 'paragraph']],
 						['height', ['height']],
 						['table', ['table']],
-						['insert', ['link', 'video', 'hr', 'media']],
+						['insert', ['link', 'picture', 'hr']],
 						['view', ['fullscreen', 'codeview']],
 						['help', ['help']]
 					],
-					buttons: {
-						media: function (context) {
-							var ui = jQuery.summernote.ui;
-							var button = ui.button({
-								contents: '<i class="note-icon-picture"></i>',
-								tooltip: '이미지 입력',
-								click: function () {
-									kboard_editor_open_media();
-								}
-							});
-							return button.render();
-						}
-					},
-					disableDragAndDrop: true,
 					fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande', 'Tahoma', 'Times New Roman', 'Verdana', 'Nanum Gothic', 'Malgun Gothic', 'Noto Sans KR', 'Apple SD Gothic Neo'],
 					fontNamesIgnoreCheck: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New', 'Helvetica Neue', 'Helvetica', 'Impact', 'Lucida Grande', 'Tahoma', 'Times New Roman', 'Verdana', 'Nanum Gothic', 'Malgun Gothic', 'Noto Sans KR', 'Apple SD Gothic Neo'],
 					fontSizes: ['8','9','10','11','12','13','14','15','16','17','18','19','20','24','30','36','48','64','82','150'],
@@ -375,38 +361,18 @@ function kboard_fields_validation(form, callback){
 		}
 		
 		if(jQuery(required).is(':checkbox') || jQuery(required).is(':radio')){
-			if(jQuery(element).find('.required:checked').length == 0){
-				alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
-				callback(jQuery(required).eq(0));
-				return false;
-			}
+		    if(jQuery(element).find('.required:checked').length == 0){
+		        alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
+		        callback(jQuery(required).eq(0));
+		        
+		        return false;
+		    }
 		}
 		else if(jQuery(required).val() == 'default' || !jQuery(required).val()){
-			if(jQuery(element).hasClass('kboard-attr-address')){
-				if(!jQuery('.kboard-row-postcode input').val() || !jQuery('.kboard-row-address-1 input').val()){
-					alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
-					callback(required);
-					return false;
-				}
-				else{
-					return true;
-				}
-			}
-			else if(jQuery(element).hasClass('kboard-attr-file')){
-				if(jQuery('input[name="'+jQuery(element).children('.attr-value').children().attr('name')+'"]').val() == ''){
-					alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
-					callback(required);
-					return false;
-				}
-				else{
-					return true;
-				}
-			}
-			else{
-				alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
-				callback(required);
-				return false;
-			}
+		    alert(kboard_localize_strings.required.replace('%s', jQuery(element).find('.field-name').text()));
+		    callback(required);
+		    
+		    return false;
 		}
 	});
 }
