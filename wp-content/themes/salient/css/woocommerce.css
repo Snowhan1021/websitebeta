@@ -1383,7 +1383,7 @@ body[data-fancy-form-rcs="1"] .cart_totals #shipping_method li, body[data-fancy-
 }
 
 .woocommerce .classic .product-wrap .add_to_cart_button {
-	background-image: url(.//wp-content/themes/salient/img/icons/cart-add.png)!important;
+	background-image: url(./../img/icons/cart-add.png)!important;
 	background-position: center center!important;
 	background-repeat: no-repeat!important;
 	text-indent: -9999px!important;
@@ -1456,7 +1456,7 @@ body:not([data-fancy-form-rcs="1"]).woocommerce .reset_variations  {
 
 .woocommerce .product-wrap .add_to_cart_button.added {
 	background-color: #27CCC0!important;
-	background-image: url(.//wp-content/themes/salient/img/icons/cart-added.png)!important;	
+	background-image: url(./../img/icons/cart-added.png)!important;	
 }
 
 .woocommerce .product-wrap .add_to_cart_button.added:before, .woocommerce .product-wrap .add_to_cart_button.added:after {
@@ -1965,11 +1965,11 @@ div.pp_woocommerce .pp_details .pp_description {
 }
 
 div.pp_woocommerce .pp_loaderIcon {
-	background: url(".//wp-content/themes/salient/css/img/prettyPhoto/dark_rounded/loader.gif") no-repeat scroll center center transparent!important;
+	background: url("./img/prettyPhoto/dark_rounded/loader.gif") no-repeat scroll center center transparent!important;
 }
 
 div.pp_woocommerce .pp_close {
-	background-image: url(".//wp-content/themes/salient/css/img/prettyPhoto/dark_rounded/close.png")!important;
+	background-image: url("./img/prettyPhoto/dark_rounded/close.png")!important;
 	height: 23px!important;
 	width: 17px!important;
 	right: 0px!important;
@@ -2964,12 +2964,12 @@ only screen and (min-resolution: 144dpi) {
 
    .woocommerce .product-wrap .add_to_cart_button {
    		background-size: 24px 21px!important;
-      	background-image: url(.//wp-content/themes/salient/img/icons/cart-add@2x.png)!important;
+      	background-image: url(./../img/icons/cart-add@2x.png)!important;
    }
    
    .woocommerce .product-wrap .add_to_cart_button.added {
    		background-size: 24px 21px!important;
-      	background-image: url(.//wp-content/themes/salient/img/icons/cart-added@2x.png)!important;
+      	background-image: url(./../img/icons/cart-added@2x.png)!important;
    }
 }
 
